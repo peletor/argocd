@@ -1,0 +1,6 @@
+spec:
+  source:
+    repoURL: https://github.com/peletor/argocd
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
