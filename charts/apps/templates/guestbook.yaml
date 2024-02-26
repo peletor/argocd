@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: guestbook
-  namespace: guestbook
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -12,5 +12,5 @@ spec:
   project: default
   source:
     path: guestbook
-    repoURL: https://github.com/argoproj/argocd-example-apps
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD
