@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     namespace: timeserver
-    server: kind-prod
+    server: 'https://172.18.0.3:6443'
   project: default
   source:
     path: charts/timeserver
