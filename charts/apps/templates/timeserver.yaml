@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     namespace: timeserver
-    server: {{ .Values.spec.destination.server }}
+    server: kind-prod
   project: default
   source:
     path: charts/timeserver
