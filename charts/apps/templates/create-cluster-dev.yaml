@@ -11,12 +11,12 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: clusters
+    path: clusters/cluster-dev
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: HEAD
-    helm:
-      valueFiles:
-      - values-dev-cluster.yaml
+#    helm:
+#      valueFiles:
+#      - values-dev-cluster.yaml
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
