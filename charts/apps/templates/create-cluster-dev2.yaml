@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: create-cluster-dev2
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: clusters
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    path: clusters/cluster-dev
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: HEAD
+#    helm:
+#      valueFiles:
+#      - values-dev-cluster.yaml
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
