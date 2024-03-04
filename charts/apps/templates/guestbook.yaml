@@ -17,6 +17,9 @@ spec:
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
+    managedNamespaceMetadata:
+      labels:
+        app.kubernetes.io/instance: guestbook
     automated:
       selfHeal: true
       prune: true
