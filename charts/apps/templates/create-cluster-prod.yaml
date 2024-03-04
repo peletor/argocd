@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: create-cluster-prod
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: clusters
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    path: clusters/cluster-prod
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
