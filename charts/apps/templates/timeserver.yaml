@@ -18,6 +18,9 @@ spec:
     syncOptions:
     - CreateNamespace=true
     - DeleteNamespace=true
+    managedNamespaceMetadata:
+      labels:
+        app.kubernetes.io/instance: timeserver
     automated:
       selfHeal: true
       prune: true
